@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url(//at.alicdn.com/t/c/font_5237180_ch4tsp6we49.css);
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Manrope, system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --color-ink: #1f2a28;
+  --color-muted: #788580;
+  --color-line: #e5ebe7;
+  --color-green: #68cda4;
+  --color-green-dark: #197b59;
+  --color-green-soft: #eaf8f1;
+  --color-danger: #d76e68;
+  --color-amber: #d29e51;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: #f7f9f7;
+    /* font-synthesis：font合成，在缺少字体变体时合成字体（如：缺少italic加粗、斜体、大小写等），默认启用，none禁用*/
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    min-width: 320px;
+    margin: 0;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button,
+  a {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .animate-leftcontent-fade {
+    animation: leftcontent-fade 1.3s ease-in-out;
+  }
+  .animate-rightcontent-fade {
+    animation: rightcontent-fade 1.3s ease-in-out;
+  }
+}
+
+@keyframes leftcontent-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(+100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes rightcontent-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(+100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
